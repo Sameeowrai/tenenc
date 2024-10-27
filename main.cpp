@@ -6,8 +6,13 @@ using namespace std;
 string Encode(string text){
     string result = "";
     for(int i=0; i < text.length(); i++){
-        int AsciiValue = int(text[i]);
-        string newValue = to_string(AsciiValue*10);
+        string newValue;
+        if(text[i] == '\n'){
+            newValue = "9999";
+        }else{
+            int AsciiValue = int(text[i]);
+            newValue = to_string(AsciiValue*10);
+        }
         while(newValue.length()<4){
             newValue = "0" + newValue;
         }
@@ -20,7 +25,11 @@ string Decode(string text) {
     string result = "";
     for (size_t i = 0; i < text.length(); i += 4) {
         int value = stoi(text.substr(i, 4)) / 10;
-        result += static_cast<char>(value); 
+        if(value==9999){
+            result += "\n";
+        }else{
+            result += static_cast<char>(value); 
+        }
     }
     return result;
 }
