@@ -8,23 +8,23 @@ The Tenenc algorithm operates by converting each character into its ASCII value,
 
     - Input String: The algorithm starts with an input string. For example, let's encrypt the string "Hello".
     Character to ASCII Conversion: Each character in the string is converted to its corresponding ASCII value.
-        H → 72
-        e → 101
-        l → 108
-        l → 108
-        o → 111
+        - H → 72
+        - e → 101
+        - l → 108
+        - l → 108
+        - o → 111
     - Manipulation: Each ASCII value is multiplied by 10.
-        72 * 10 = 720
-        101 * 10 = 1010
-        108 * 10 = 1080
-        108 * 10 = 1080
-        111 * 10 = 1110
+        - 72 * 10 = 720
+        - 101 * 10 = 1010
+        - 108 * 10 = 1080
+        - 108 * 10 = 1080
+        - 111 * 10 = 1110
     - Formatting: The resulting values are formatted to ensure they are always four digits long by padding with leading zeros if necessary.
-        720 → 0720
-        1010 → 1010
-        1080 → 1080
-        1080 → 1080
-        1110 → 1110
+        - 720 → 0720
+        - 1010 → 1010
+        - 1080 → 1080
+        - 1080 → 1080
+        - 1110 → 1110
     - Final Encoded String: The encoded values are concatenated to form the final encoded string.
         Encoded result for "Hello": "07201010108010801110"
 
@@ -33,17 +33,17 @@ The Tenenc algorithm operates by converting each character into its ASCII value,
     - Extracting Values: The encoded string is processed in chunks of four characters.
         Extracted values: 0720, 1010, 1080, 1080, 1110
     - Reversing Manipulation: Each extracted value is divided by 10 to retrieve the original ASCII values.
-        0720 / 10 = 72
-        1010 / 10 = 101
-        1080 / 10 = 108
-        1080 / 10 = 108
-        1110 / 10 = 111
+        - 0720 / 10 = 72
+        - 1010 / 10 = 101
+        - 1080 / 10 = 108
+        - 1080 / 10 = 108
+        - 1110 / 10 = 111
     - Character Conversion: Convert each ASCII value back to its corresponding character.
-        72 → H
-        101 → e
-        108 → l
-        108 → l
-        111 → o
+        - 72 → H
+        - 101 → e
+        - 108 → l
+        - 108 → l
+        - 111 → o
     - Final Decoded String: Concatenate the characters to form the original string.
         Decoded result: "Hello"
 
