@@ -19,18 +19,18 @@ int main(int argc, char* argv[]) {
     }else{
         text = argv[2];
     }
-
+    Tenenc tenenc;
     string result = "";
     switch (op)
     {
         case 0:{
-            result = Encode(text);
+            result = tenenc.encode(text);
             break;
         }
             
         
         case 1:{
-            result = Decode(text);
+            result = tenenc.decode(text);
             break;
         }
 
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
             break;
     }
 
-    int outIndex = Find("-out", argv, argc);
+    int outIndex = tenenc.find("-out", argv, argc);
     if (outIndex != -1 && outIndex + 1 < argc) { 
         ofstream outFile(argv[outIndex + 1]);
         if (outFile.is_open()) {
